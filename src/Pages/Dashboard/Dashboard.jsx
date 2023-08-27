@@ -2,7 +2,7 @@ import { BiTimeFive } from "react-icons/bi";
 import { GiBackwardTime } from "react-icons/gi";
 import { BsCalendar2Week } from "react-icons/bs";
 import { MdOutlineCalendarMonth } from "react-icons/md";
-//import LineChart from "../LineChart/LineChart";
+import LineChart from "../LineChart/LineChart";
 const Dashboard = () => {
 	return (
 		<>
@@ -49,6 +49,34 @@ const Dashboard = () => {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className="grid grid-cols-12">
+				<div className="col-span-8">
+					{" "}
+					{/* Use col-span-8 here */}
+					<LineChart />
+				</div>
+				<div className="col-span-4">
+					<div className="bg-white p-6 rounded-lg shadow-md w-80 mx-auto">
+						<div className="text-lg font-bold mb-4">Available Balance</div>
+						<hr></hr>
+						<div className="text-base mb-6">
+							BDT 2.50
+							<br />
+							Valid till: 10 Nov 2023
+						</div>
+						<hr></hr>
+						<div className="flex justify-between mt-5">
+							<button className="px-1 py-1 bg-sky-500 text-white rounded hover:bg-blue-700">
+								SMS Rate
+							</button>
+							<button className="px-1 py-1 bg-sky-500 text-white rounded hover:bg-blue-700">
+								Recharge
+							</button>
+						</div>
+					</div>
+				</div>{" "}
+				{/* Use col-span-4 here */}
 			</div>
 		</>
 	);
