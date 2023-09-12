@@ -3,7 +3,7 @@
 const Footer = () => {
 	return (
 		<div>
-			<h1>This is footer.</h1>
+			<h1 className="text-sm text-center">Copyright SMS  SERVICE © 2023</h1>
 		</div>
 	);
 };

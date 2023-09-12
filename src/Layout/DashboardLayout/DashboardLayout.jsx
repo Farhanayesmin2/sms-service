@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../../Shared/DashboardHeader/Header/Header";
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../../Dashboard/DashboardSidebar/DashboardSidebar";
+import Footer from "../../Shared/Footer/Footer";
 const DashboardLayout = () => {
 	const [isOpen, setIsOpen] = useState(true);
 
@@ -10,6 +11,7 @@ const DashboardLayout = () => {
 	};
 
 	return (
+		<>
 		<div
 			className="dark:bg-boxdark-2 dark:text-bodydark h-screen transform transition-transform duration-300 grid"
 			style={{
@@ -28,8 +30,12 @@ const DashboardLayout = () => {
 						<Outlet />
 					</div>
 				</div>
+				<Footer></Footer>
 			</div>
+		
 		</div>
+	
+		</>
 	);
 };
 
