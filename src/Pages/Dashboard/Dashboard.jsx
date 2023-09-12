@@ -1,89 +1,29 @@
-import { BiTimeFive } from "react-icons/bi";
-import { GiBackwardTime } from "react-icons/gi";
-import { BsCalendar2Week } from "react-icons/bs";
-import { MdOutlineCalendarMonth } from "react-icons/md";
+import DashboardTable from "../DashboardTable/DashboardTable";
 import LineChart from "../LineChart/LineChart";
+import Balance from "./Balance/Balance";
+import BalanceCard from "./BalanceCard/BalanceCard";
+import QuickText from "./QuickText/QuickText";
+
+
 const Dashboard = () => {
   return (
     <>
-      <div className="pb-8 pt-2">
-        <div className="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex items-center bg-white border rounded-sm overflow-hidden border-r-teal-400 shadow-teal-400 shadow">
-            <div className="p-4 bg-teal-400">
-              <BiTimeFive className="text-white w-11 h-11"></BiTimeFive>
-            </div>
-            <div className="px-4 text-gray-700">
-              <h3 className="text-sm tracking-wider">Today</h3>
-              <p className="text-3xl">0</p>
-              <span className="text-sm font-thin">Cost: 0.0</span>
-            </div>
-          </div>
-          <div className="flex items-center bg-white border rounded-sm overflow-hidden shadow-cyan-400 border-r-cyan-400 shadow">
-            <div className="p-4 bg-cyan-400">
-              <GiBackwardTime className="text-white w-11 h-11"></GiBackwardTime>
-            </div>
-            <div className="px-4 text-gray-700">
-              <h3 className="text-sm tracking-wider">Yesterday</h3>
-              <p className="text-3xl">0</p>
-              <span className="text-sm font-thin">Cost: 0.0</span>
-            </div>
-          </div>
-          <div className="flex items-center bg-white border rounded-sm overflow-hidden shadow-indigo-400 border-r-indigo-400 shadow">
-            <div className="p-4 bg-indigo-400">
-              <BsCalendar2Week className="text-white w-11 h-11"></BsCalendar2Week>
-            </div>
-            <div className="px-4 text-gray-700">
-              <h3 className="text-sm tracking-wider">This Week</h3>
-              <p className="text-3xl">0</p>
-              <span className="text-sm font-thin">Cost: 0.0</span>
-            </div>
-          </div>
-          <div className="flex items-center bg-white border rounded-sm overflow-hidden border-r-rose-400 shadow-rose-400 shadow">
-            <div className="p-4 bg-rose-400">
-              <MdOutlineCalendarMonth className="text-white w-11 h-11"></MdOutlineCalendarMonth>
-            </div>
-            <div className="px-4 text-gray-700">
-              <h3 className="text-sm tracking-wider">This Month</h3>
-              <p className="text-3xl">0</p>
-              <span className="text-sm font-thin">Cost: 0.0</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div>
+       <div>
+       <BalanceCard
+       >  </BalanceCard>
+       </div>
+       <div className="grid grid-rows-2 lg:grid-cols-3 gap-2 ">
+<div className=" md:row-span-2 md:col-span-2 "> <LineChart></LineChart>  </div>
+<div className="md:row-span-1 pb-0 mb-0 ">  <Balance></Balance>    </div>
+<div className="    md:row-span-1 lg:-mt-14 md:-mt-28  "><QuickText></QuickText>      </div>
 
-      <div className="grid grid-cols-12">
-        <div className="col-span-8">
-          {" "}
-          {/* Use col-span-8 here */}
-          <LineChart />
-        </div>
-        <div className="col-span-4">
-          <div className="bg-white p-6 rounded-lg shadow-md w-80 mx-auto">
-            <div className="text-lg font-bold mb-4">Available Balance</div>
-            <hr></hr>
-            <div className="text-base mb-6">
-              
-            <br />
-              <h1 className="text-2xl font-bold text-center">    BDT 2.50  </h1>
-           
-              <br />
-              <h1  className="text-xl  text-center"> Valid till: 10 Nov 2023</h1>
-             
-            </div>
-            <hr></hr>
-            <div className="flex justify-between mt-5">
-              <button className="px-1 py-1 bg-sky-500 text-white rounded hover:bg-blue-700">
-                SMS Rate
-              </button>
-              <button className="px-1 py-1 bg-sky-500 text-white rounded hover:bg-blue-700">
-                Recharge
-              </button>
-            </div>
-          </div>
-        </div>{" "}
-        {/* Use col-span-4 here */}
-      </div>
-    </>
+</div>
+<div>
+  <DashboardTable></DashboardTable>
+</div>
+    </div>
+</>
   );
 };
 
