@@ -44,12 +44,12 @@ const SentSms = () => {
       </div>
 
       <div className="flex flex-col">
-        <label className="font-semibold text-gray-700 flex items-center" >  <BsFillTelephoneXFill></BsFillTelephoneXFill>  Enter Phone Numbers:</label>
+        <label className="font-semibold text-gray-700 flex items-center" >  <BsFillTelephoneXFill></BsFillTelephoneXFill> Enter Phone Numbers:</label>
         <textarea {...register('phoneNumbers')} className="p-2 border rounded" placeholder="Separate numbers by newline"></textarea>
       </div>
 
       <div className="flex flex-col">
-        <label className="font-semibold text-gray-700 flex items-center"> <HiOutlineChatBubbleOvalLeft></HiOutlineChatBubbleOvalLeft>   SMS Templates:</label>
+        <label className="font-semibold text-gray-700 flex items-center"> <HiOutlineChatBubbleOvalLeft></HiOutlineChatBubbleOvalLeft>SMS Templates:</label>
         <select {...register('smsTemplate')} className="p-2 border rounded">
           <option value="template1">Template 1</option>
           <option value="template2">Template 2</option>
@@ -57,7 +57,7 @@ const SentSms = () => {
       </div>
 
       <div className="flex flex-col">
-        <label className="font-semibold text-gray-700 flex items-center">  <PiWechatLogoFill></PiWechatLogoFill> Enter SMS Content:</label>
+        <label className="font-semibold text-gray-700 flex items-center"> <PiWechatLogoFill></PiWechatLogoFill>Enter SMS Content:</label>
         <textarea 
           {...register('smsContent', { maxLength: maxLength })} 
           className="p-2 border rounded h-24"
@@ -97,15 +97,15 @@ const SentSms = () => {
             </div>
             <div className="bg-sky-200/75 border border-sky-500/25 p-4 rounded shadow">
               <h2 className="text-xl font-bold mb-4">SMS Content</h2>
-<p>The message length for English (GSM 7bit) characters is 160 for regular message and 153 for multipart message.</p>
+<p className='py-1'>The message length for English (GSM 7bit) characters is 160 for regular message and 153 for multipart message.</p>
 
-<p>GSM extended characters (~^{}[]|€) can be used for the cost of two characters.</p>
+<p className='py-1'>GSM extended characters (~^{}[]|€) can be used for the cost of two characters.</p>
 
-<p>The message length for Unicode (UCS-2) characters is 70 for regular message and 67 for multipart message.</p>
+<p className='py-1'>The message length for Unicode (UCS-2) characters is 70 for regular message and 67 for multipart message.</p>
 
-<p>You can add Emojis to a message. However, Emojis reduce the character limit to 70 characters and some Emojis can be used for the cost of two characters.</p>
+<p className='py-1'>You can add Emojis to a message. However, Emojis reduce the character limit to 70 characters and some Emojis can be used for the cost of two characters.</p>
 
-<p>Check your SMS count before pushing SMS.</p>
+<p className='py-1'>Check your SMS count before pushing SMS.</p>
               {/* Your alert contents go here */}
             </div>
           </div>
