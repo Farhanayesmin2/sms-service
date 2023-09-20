@@ -7,6 +7,7 @@ import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Shared/Login/Login";
+import SentSms from "../Pages/SentSms/SentSms";
 
 const router = createBrowserRouter([
 	{
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
 			{
 				path: "dashboard",
 				element: <Dashboard></Dashboard>,
+			},
+			{
+				path: "send-sms",
+				element: <SentSms></SentSms> 
 			},
 		],
 	},
