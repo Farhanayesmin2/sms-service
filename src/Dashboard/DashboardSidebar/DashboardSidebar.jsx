@@ -83,7 +83,7 @@ const DashboardSidebar = ({ isOpen }) => {
         },
         {
           label: "Send From File",
-          to: "/dashboard/messaging/send-from-file",
+          to: "/dashboard/send-from-file",
         },
         {
           label: "Sender ID",

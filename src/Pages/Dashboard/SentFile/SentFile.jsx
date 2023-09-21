@@ -1,12 +1,11 @@
-
 import { useForm } from 'react-hook-form';
-import { BsFillSendFill,BsFillTelephoneXFill } from "react-icons/bs";
+import { BsFillSendFill,BsFillFileEarmarkTextFill } from "react-icons/bs";
 import { MdOutlineContactMail,MdCalendarMonth } from "react-icons/md";
 import { PiWechatLogoFill } from "react-icons/pi";
-import { HiMiniUserGroup,HiOutlineChatBubbleOvalLeft } from "react-icons/hi2";
-import Balance from '../Dashboard/Balance/Balance';
+import { HiOutlineChatBubbleOvalLeft } from "react-icons/hi2";
+import Balance from '../Balance/Balance';
 
-const SentSms = () => {
+const SentFile = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = (data) => console.log(data);
 
@@ -14,12 +13,9 @@ const SentSms = () => {
   const maxLength = 160;
   const charactersLeft = maxLength - smsContent.length;
 
+    return (
+    
 
-
-
-  return (
-   
-   
       <div className="max-w-screen-2xl mx-auto">
 
         {/* For tablets and larger screens */}
@@ -37,17 +33,15 @@ const SentSms = () => {
       </div>
 
       <div className="flex flex-col">
-        <label className="font-semibold text-gray-700 flex items-center"> <HiMiniUserGroup></HiMiniUserGroup>  Group Recipients:</label>
-        <select {...register('groupRecipient')} className="p-2 border rounded">
-          <option value="MNSM">MNSM</option>
-        </select>
-      </div>
+    <label className="font-semibold text-gray-700 mb-2 flex items-center">  <BsFillFileEarmarkTextFill></BsFillFileEarmarkTextFill> Select File (csv, xls, xlsx, txt)</label>
+    <input type="file" {...register('file', { required: true })} className="p-2 w-full border rounded mb-2" />
 
-      <div className="flex flex-col">
-        <label className="font-semibold text-gray-700 flex items-center" >  <BsFillTelephoneXFill></BsFillTelephoneXFill> Enter Phone Numbers:</label>
-        <textarea {...register('phoneNumbers')} className="p-2 border rounded" placeholder="Separate numbers by newline"></textarea>
-      </div>
-
+    <div>
+    <a href="/Sample_Number.csv" className="text-blue-500 hover:underline" download>Sample CSV</a>,
+        <a href="/sample.xlsx" className="text-blue-500 hover:underline" download>Sample XLSX</a>,
+        <a href="/Sample.txt" className="text-blue-500 hover:underline" download>Sample TXT</a>
+    </div>
+</div>
       <div className="flex flex-col">
         <label className="font-semibold text-gray-700 flex items-center"> <HiOutlineChatBubbleOvalLeft></HiOutlineChatBubbleOvalLeft>SMS Templates:</label>
         <select {...register('smsTemplate')} className="p-2 border rounded">
@@ -78,7 +72,8 @@ const SentSms = () => {
           <input type="radio" {...register('schedule')} value="sendLater" className="mr-1" />
           <span>Send Later</span>
         </div>
-      </div> </div>
+      </div> 
+      </div>
     
       <button type="submit" className=" flex items-center  py-2 px-4 bg-sky-500 text-white rounded hover:bg-blue-600 focus:outline-none"> <BsFillSendFill></BsFillSendFill>  Send SMS</button>
     </form>
@@ -198,7 +193,10 @@ const SentSms = () => {
       
       
     </div>
-  );
-}
+ 
 
-export default SentSms;
+
+    );
+};
+
+export default SentFile;

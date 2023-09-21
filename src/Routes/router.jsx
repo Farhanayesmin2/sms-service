@@ -8,6 +8,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Shared/Login/Login";
 import SentSms from "../Pages/SentSms/SentSms";
+import SentFile from "../Pages/Dashboard/SentFile/SentFile";
 
 const router = createBrowserRouter([
 	{
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
 				path: "send-sms",
 				element: <SentSms></SentSms> 
 			},
+			{
+				path: "send-from-file",
+				element: <SentFile></SentFile>
+			}
 		],
 	},
 ]);
